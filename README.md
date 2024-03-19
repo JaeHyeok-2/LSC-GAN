@@ -13,12 +13,12 @@
 
 
 ### Initializing the Latent Space with LSC-VAE 
-- $\mathbb{i} $ be a feature which is included in data x and latent space $\mathbb{z}$
+- $`\mathbb{i}`$ be a feature which is included in data x and latent space $`\mathbb{z}`$
 - In General, $\mathbb{z} \sim \mathcal{N}(0,I)$, but we choose $\mathcal{z_i} \sim \mathcal{N}(\mu_i, I)$  for controlling latent space. 
-    - if we want to produce data which has multiple features $\mathcal{i} $ and $\mathcal{j}$, we generate data from $\mathcal{z_{ij}} \sim \mathcal{N}(\mu_i + \mu_j,I)$
+    - if we want to produce data which has multiple features $i$ and $\mathcal{j}$, we generate data from $\mathcal{z_{ij}} \sim \mathcal{N}(\mu_i + \mu_j,I)$
 
-* $\mathcal{L}_{LSC-VAE} = -\mathbb{E}_{\mathcal{z_i \sim Q(z_i|x_i)}}[\log P(x_i|z_i)] + 
-\mathcal{D}_{KL}[\mathcal{Q(z_i|x_i)|| P(z_i)}] = \mathcal{L}_{VAE} + \mathcal{L}_{prior}$
+* $`\mathcal{L}_{LSC-VAE} = -\mathbb{E}_{\mathcal{z_i \sim Q(z_i|x_i)}}[\log P(x_i|z_i)] + 
+\mathcal{D}_{KL}[\mathcal{Q(z_i|x_i)|| P(z_i)}] = \mathcal{L}_{VAE} + \mathcal{L}_{prior}`$
 
 
 
@@ -33,8 +33,8 @@
 - The encoder projects the generated data back to latent space so as to be trained to minimize the difference between latent sapce where data is generated and the compressed data is projected.
 
 - #### Loss Function 
-    - $\mathcal{min}_D\; \mathbb{E}_{x_i \sim p_{data}(x_i)}[(D(x_i) -1)^2]  + \mathbb{E}_{z_i \sim P_z(z_i)} [(D(G_{z_i}))^2]$ 
-     - $\mathcal{min}_{Q,D} \; \mathbb{E}_{z_i \sim p_z(z_i)} [D(G(z_i) -1)^2] + \mathcal{D}_{KL}[\mathcal{Q}(z_i)|G(z_i)||\mathcal{N}(\mu_i, I)]$
+    - $`\mathcal{min}_D\; \mathbb{E}_{x_i \sim p_{data}(x_i)}[(D(x_i) -1)^2]  + \mathbb{E}_{z_i \sim P_z(z_i)} [(D(G_{z_i}))^2]`$ 
+     - $`\mathcal{min}_{Q,D} \; \mathbb{E}_{z_i \sim p_z(z_i)} [D(G(z_i) -1)^2] + \mathcal{D}_{KL}[\mathcal{Q}(z_i)|G(z_i)||\mathcal{N}(\mu_i, I)]`$
 
 
 

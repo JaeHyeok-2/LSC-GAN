@@ -61,4 +61,4 @@ CelebA Dataset
   <img src="Generated.png" alt="results" />
 </p>
 
-- $ x_{ij} = G(z_i + n_j)$, where $x_{ij}$ is an image which has $i$- and $j$-features, and $z_i$ is the latent variable.
+- $`x_{ij} = G(z_i + n_j)`$, where $x_{ij}$ is an image which has $i$- and $j$-features, and $z_i$ is the latent variable.
